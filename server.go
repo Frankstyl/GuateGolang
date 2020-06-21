@@ -2,17 +2,16 @@
 package main
 
 import (
+	"GoExample/GuateGolang/data"
 	"fmt"
 	"html/template"
 	"net/http"
 	"os"
-	"GoExample/GuateGolang/data"
 )
-name, email, age, phone 
 
 //home redirct the client's petition on / to home.html
 func home(w http.ResponseWriter, r *http.Request) {
-	j:=data.CreateUser("Juan", "Juan356@gmail.com","23","no phone")
+	j := data.CreateUser("Juan", "Juan356@gmail.com", "23", "no phone", "/common/images/user/mypic.jpg")
 	templ, err := template.ParseFiles("html/home.html")
 	if err != nil {
 		fmt.Println(err)
@@ -20,7 +19,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 	templ.Execute(w, j)
 }
 
-//GetPort give you a port  of the current system.
+//GetPort gives you a port  of the current system.
 func GetPort() string {
 	var port = os.Getenv("PORT")
 
@@ -42,6 +41,8 @@ func main() {
 	//sirviendo el archivo css  fotos y demas que estan dentro del directorio  common
 	mux.Handle("/common/", http.StripPrefix("/common/", http.FileServer(http.Dir("common"))))
 
+	//when the user request / whe call the home handler
+	mux.HandleFunc("/", home)
 	//making a serever
 	//creando un servidor
 	server := &http.Server{

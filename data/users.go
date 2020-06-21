@@ -7,10 +7,11 @@ type User struct {
 	Email string //To save the Email  para guardar el correo electronico
 	Age   string //To save the Age para guardar la edad
 	Phone string //to save the Phone number para guardar el numero de telefone
+	Picture string //to save the url of the user's picture para guradar la url de la foto del usuario
 }
 
 //CreateUser makes a User
-func CreateUser(name, email, age, phone string) User {
-	a := User{name, email, age, phone}
+func CreateUser(name, email, age, phone, pictureurl string) User {
+	a := User{name, email, age, phone, pictureurl}
 	return a
 }

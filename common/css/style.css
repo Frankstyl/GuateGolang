@@ -1,0 +1,66 @@
+.outcontainer{
+    width: 100%;
+    height: auto;
+    background-color:#ebebeb;
+}
+.incontainer{
+    width: 80%;
+    height: auto;
+    background-color: white;
+    margin-left: 10%;
+}
+.incontainer div{
+    margin-top: 10px;
+}
+.front{
+    width: 100%;
+    height: 310px;
+    background-image: url('/common/images/tree.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.content{
+    background-color: #262626;
+    position: relative;
+    left: 40%;
+    width: 200px;
+    height: 180px;
+    top: 100px;
+    border-radius: 100%;
+}
+.Picture{
+    margin-left: 10px;
+    width: 180px;
+    height: 150px;
+    background-image: url(/common/images/face.jpg);
+/*    background-color: black;*/
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.User{
+    width: 200px;
+    height: 20px;
+}
+.User ul li{
+    text-decoration: none;
+    color:black;
+    display: inline-block;
+    width: 50px;
+    border-left: 1px;
+}
+.User :hover{
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 2px 2px 7px white;
+}
+.principal{
+    text-align: justify;
+    width: 80%;
+    height: 200px;
+    margin-left: 10%;
+}
